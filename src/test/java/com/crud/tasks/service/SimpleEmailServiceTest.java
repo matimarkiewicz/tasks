@@ -12,8 +12,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 import java.util.Optional;
 
-import static org.junit.Assert.*;
-
 @RunWith(MockitoJUnitRunner.class)
 public class SimpleEmailServiceTest {
 
@@ -26,13 +24,13 @@ public class SimpleEmailServiceTest {
     @Test
     public void shouldSendEmail() {
 
-        Mail mail = new Mail("test@test.com", "Test", "Test Message", "cc");
+        Mail mail = new Mail("test@test.com", "Test", "Test Message");
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
-        Optional.ofNullable(mail.getToCc()).ifPresent(mailMessage::setCc);
+        //Optional.ofNullable(mail.getToCc()).ifPresent(mailMessage::setCc);
 
         simpleEmailService.send(mail);
 
