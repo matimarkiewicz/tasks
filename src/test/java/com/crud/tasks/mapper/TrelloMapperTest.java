@@ -30,12 +30,9 @@ public class TrelloMapperTest {
         //Then
         Assert.assertEquals(boardDto.get(0).getId(), mappedList.get(0).getId());
         Assert.assertEquals(boardDto.get(0).getName(), mappedList.get(0).getName());
-        Assert.assertEquals(boardDto.get(0).getLists().get(0).getId(),
-                mappedList.get(0).getLists().get(0).getId());
-        Assert.assertEquals(boardDto.get(0).getLists().get(0).getName(),
-                mappedList.get(0).getLists().get(0).getName());
-        Assert.assertEquals(boardDto.get(0).getLists().get(0).isClosed(),
-                mappedList.get(0).getLists().get(0).isClosed());
+        Assert.assertEquals(boardDto.get(0).getLists().get(0).getId(), mappedList.get(0).getLists().get(0).getId());
+        Assert.assertEquals(boardDto.get(0).getLists().get(0).getName(), mappedList.get(0).getLists().get(0).getName());
+        Assert.assertEquals(boardDto.get(0).getLists().get(0).isClosed(), mappedList.get(0).getLists().get(0).isClosed());
     }
 
     @Test
@@ -53,12 +50,9 @@ public class TrelloMapperTest {
         //Then
         Assert.assertEquals(board.get(0).getId(), mappedList.get(0).getId());
         Assert.assertEquals(board.get(0).getName(), mappedList.get(0).getName());
-        Assert.assertEquals(board.get(0).getLists().get(0).getId(),
-                mappedList.get(0).getLists().get(0).getId());
-        Assert.assertEquals(board.get(0).getLists().get(0).getName(),
-                mappedList.get(0).getLists().get(0).getName());
-        Assert.assertEquals(board.get(0).getLists().get(0).isClosed(),
-                mappedList.get(0).getLists().get(0).isClosed());
+        Assert.assertEquals(board.get(0).getLists().get(0).getId(), mappedList.get(0).getLists().get(0).getId());
+        Assert.assertEquals(board.get(0).getLists().get(0).getName(), mappedList.get(0).getLists().get(0).getName());
+        Assert.assertEquals(board.get(0).getLists().get(0).isClosed(), mappedList.get(0).getLists().get(0).isClosed());
     }
 
     @Test
