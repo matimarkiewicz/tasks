@@ -1,7 +1,7 @@
 package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.*;
-import com.crud.tasks.service.TrelloFacade;
+import com.crud.tasks.service.TrelloFacade1;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +31,7 @@ public class TrelloControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private TrelloFacade trelloFacade;
+    private TrelloFacade1 trelloFacade;
 
     @Test
     public void shouldFetchEmptyTrelloBoards() throws Exception {
