@@ -27,6 +27,7 @@ dependencies {
 	compile ('org.springframework.boot:spring-boot-starter-mail:2.1.8.RELEASE')
 	annotationProcessor ('org.projectlombok:lombok')
 	compile ('com.google.code.gson:gson:2.8.2')
+	compile ('org.springframework.boot:spring-boot-starter-actuator')
 
 	implementation ('org.springframework.boot:spring-boot-starter-web')
 	testImplementation ('org.springframework.boot:spring-boot-starter-test')
