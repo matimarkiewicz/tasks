@@ -24,7 +24,6 @@ public class EmailScheduler {
 
     @Scheduled(cron = "0 0 10 * * *")
     public void sendInformationEmail() {
-        System.out.println(taskRepository);
 
         long size = taskRepository.count();
         String pluralTask = size == 1 ? " task" : " tasks";

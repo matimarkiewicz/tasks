@@ -114,4 +114,6 @@ public class TrelloMapperTest {
         Assert.assertEquals(trelloCard.getPos(), mappedCard.getPos());
         Assert.assertEquals(trelloCard.getListId(), mappedCard.getListId());
     }
+
+
 }
