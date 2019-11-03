@@ -1,7 +1,7 @@
 package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.*;
-import com.crud.tasks.service.TrelloFacade1;
+import com.crud.tasks.trello.facade.TrelloFacade;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +31,7 @@ public class TrelloControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private TrelloFacade1 trelloFacade;
+    private TrelloFacade trelloFacade;
 
     @Test
     public void shouldFetchEmptyTrelloBoards() throws Exception {
@@ -84,7 +84,7 @@ public class TrelloControllerTest {
                 "Test",
                 "http://test.com");
 
-        when(trelloFacade.createTrelloCard(ArgumentMatchers.any(TrelloCardDto.class))).thenReturn(createdTrelloCardDto);
+        when(trelloFacade.createCard(ArgumentMatchers.any(TrelloCardDto.class))).thenReturn(createdTrelloCardDto);
 
         Gson gson = new Gson();
         String jsonContent = gson.toJson(trelloCardDto);
