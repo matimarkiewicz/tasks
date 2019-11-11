@@ -32,10 +32,34 @@ public class MailCreatorService {
         context.setVariable("tasks_url", "https://matimarkiewicz.github.io");
         context.setVariable("button", "Visit website");
         context.setVariable("admin_name", adminConfig.getAdminName());
+        context.setVariable("show_button", true);
+        context.setVariable("is_friend", true);
+        context.setVariable("admin_config", adminConfig);
+        context.setVariable("application_functionality", functionality);
+        context.setVariable("preview", "Your Tasks");
+        context.setVariable("company_name", adminConfig.getCompanyName());
+        return templateEngine.process("mail/created-trello-card-mail", context);
+    }
+
+    public String buildTasksEmail(String message) {
+
+        List<String> taskfunctionality = new ArrayList<>();
+        taskfunctionality.add("You can manage your tasks");
+        taskfunctionality.add("Provides connection with Trello Account");
+        taskfunctionality.add("Application allows sending tasks to Trello");
+
+        Context context = new Context();
+        context.setVariable("message", message);
+        context.setVariable("tasks_url", "https://matimarkiewicz.github.io");
+        context.setVariable("button", "Your Tasks");
+        context.setVariable("admin_name", adminConfig.getAdminName());
         context.setVariable("show_button", false);
         context.setVariable("is_friend", false);
         context.setVariable("admin_config", adminConfig);
-        context.setVariable("application_functionality", functionality);
-        return templateEngine.process("mail/created-trello-card-mail", context);
+        context.setVariable("application_functionality", taskfunctionality);
+        context.setVariable("preview", "Your Tasks");
+        context.setVariable("company_name", adminConfig.getCompanyName());
+        return templateEngine.process("mail/scheduled-mail", context);
     }
+
 }
